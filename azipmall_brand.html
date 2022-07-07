@@ -1,0 +1,339 @@
+<style>
+
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+[name="slide"] {display:none;}
+.slidebox {max-width:960px;width:100%;margin:0 auto;text-align:center;}
+.slidebox img {max-width:100%;}
+.slidebox .slidelist {
+	white-space:nowrap;
+	font-size:0;
+	overflow:hidden;
+}
+.slidebox .slideitem {
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	width:100%;
+	transition:all .35s;
+}
+.slidebox .slideitem label {
+	position:absolute;
+	z-index:1;
+	top:50%;
+	transform:translateY(-50%);
+	padding:20px;
+	border-radius:50%;
+	cursor:pointer;
+}
+label.left {
+	left:20px;
+	background-color:#5F5F5F;
+	background-image:url('./img/left-arrow.png');
+	background-position:center center;
+	background-size:50%;
+	background-repeat:no-repeat;
+}
+label.right {
+	right:20px;
+	background-color:#5F5F5F;
+	background-image:url('./img/right-arrow.png');
+	background-position:center center;
+	background-size:50%;
+	background-repeat:no-repeat;
+}
+
+/* 페이징 스타일 */
+.paginglist {text-align:center;padding:30px 0;}
+.paginglist > li {display:inline-block;vertical-align:middle;margin:0 10px;}
+.paginglist > li > label {display:block;padding:10px 30px;border-radius:10px;background:#ccc;cursor:pointer;}
+.paginglist > li:hover > label {background:#333;}
+
+[id="slide01"]:checked ~ .slidelist .slideitem {transform:translateX(0);animation:slide01 20s infinite;}
+[id="slide02"]:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 20s infinite;}
+[id="slide03"]:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 20s infinite;}
+[id="slide04"]:checked ~ .slidelist .slideitem {transform:translateX(-300%);animation:slide04 20s infinite;}
+[id="slide05"]:checked ~ .slidelist .slideitem {transform:translateX(-400%);animation:slide05 20s infinite;}
+[id="slide06"]:checked ~ .slidelist .slideitem {transform:translateX(-500%);animation:slide06 20s infinite;}
+[id="slide07"]:checked ~ .slidelist .slideitem {transform:translateX(-600%);animation:slide07 20s infinite;}
+[id="slide08"]:checked ~ .slidelist .slideitem {transform:translateX(-700%);animation:slide08 20s infinite;}
+[id="slide09"]:checked ~ .slidelist .slideitem {transform:translateX(-800%);animation:slide09 20s infinite;}
+
+@keyframes slide01 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:-400%;}
+	53% {left:-400%;}
+	55% {left:-500%;}
+	64% {left:-500%;}
+	66% {left:-600%;}
+	75% {left:-600%;}
+	77% {left:-700%;}
+	86% {left:-700%;}
+	88% {left:-800%;}
+	97% {left:-800%;}
+	100% {left:0%;}
+}
+@keyframes slide02 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:-400%;}
+	53% {left:-400%;}
+	55% {left:-500%;}
+	64% {left:-500%;}
+	66% {left:-600%;}
+	75% {left:-600%;}
+	77% {left:-700%;}
+	86% {left:-700%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide03 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:-400%;}
+	53% {left:-400%;}
+	55% {left:-500%;}
+	64% {left:-500%;}
+	66% {left:-600%;}
+	75% {left:-600%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide04 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:-400%;}
+	53% {left:-400%;}
+	55% {left:-500%;}
+	64% {left:-500%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide05 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:-400%;}
+	53% {left:-400%;}
+	55% {left:400%;}
+	64% {left:400%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide06 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:-300%;}
+	42% {left:-300%;}
+	44% {left:500%;}
+	53% {left:500%;}
+	55% {left:400%;}
+	64% {left:400%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide07 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:-200%;}
+	31% {left:-200%;}
+	33% {left:600%;}
+	42% {left:600%;}
+	44% {left:500%;}
+	53% {left:500%;}
+	55% {left:400%;}
+	64% {left:400%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide08 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:-100%;}
+	20% {left:-100%;}
+	22% {left:700%;}
+	31% {left:700%;}
+	33% {left:600%;}
+	42% {left:600%;}
+	44% {left:500%;}
+	53% {left:500%;}
+	55% {left:400%;}
+	64% {left:400%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide09 {
+	0% {left:0%;}
+	9% {left:0%;}
+	11% {left:800%;}
+	20% {left:800%;}
+	22% {left:700%;}
+	31% {left:700%;}
+	33% {left:600%;}
+	42% {left:600%;}
+	44% {left:500%;}
+	53% {left:500%;}
+	55% {left:400%;}
+	64% {left:400%;}
+	66% {left:300%;}
+	75% {left:300%;}
+	77% {left:200%;}
+	86% {left:200%;}
+	88% {left:100%;}
+	97% {left:100%;}
+	100% {left:0%;}
+}
+</style> 
+
+<div class="slidebox">
+	<input type="radio" name="slide" id="slide01" checked>
+	<input type="radio" name="slide" id="slide02">
+	<input type="radio" name="slide" id="slide03">
+	<input type="radio" name="slide" id="slide04">
+	<input type="radio" name="slide" id="slide05">
+	<input type="radio" name="slide" id="slide06">
+	<input type="radio" name="slide" id="slide07">
+	<input type="radio" name="slide" id="slide08">
+	<input type="radio" name="slide" id="slide09">
+	<ul class="slidelist">
+		<li class="slideitem">
+			<div>
+				<label for="slide09" class="left"></label>
+				<label for="slide02" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/lizda/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/1.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide01" class="left"></label>
+				<label for="slide03" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/vivlas/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/2.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide02" class="left"></label>
+				<label for="slide04" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/changefit/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/3.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide03" class="left"></label>
+				<label for="slide05" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/honeyzip/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/4.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide04" class="left"></label>
+				<label for="slide06" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/biovoice/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/5.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide05" class="left"></label>
+				<label for="slide07" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/hintip/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/6.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide06" class="left"></label>
+				<label for="slide08" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/deeom/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/7.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide07" class="left"></label>
+                <label for="slide09" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/tc1/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/8.jpg"></a>
+			</div>
+		</li>
+		<li class="slideitem">
+			<div>
+				<label for="slide08" class="left"></label>
+				<label for="slide01" class="right"></label>
+				<a href="https://search.rakuten.co.jp/search/mall/ttat/?sid=409792">
+                    <img src="https://image.rakuten.co.jp/azip-official/cabinet/08950843/09072344/9.jpg"></a>
+			</div>
+		</li>
+	</ul>
+
+</div>
